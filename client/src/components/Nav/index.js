@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import M from "materialize-css";
 import "./style.css";
 
 class Nav extends Component {
@@ -8,21 +9,21 @@ class Nav extends Component {
         this.state = {}
     }
 
+    componentDidMount() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+          });
+    }
 
 render() {
     return (
         <div>
             <nav>
-                <div className="nav-wrapper cyan">
-                    <a href="#" className="brand-logo left">Norman Chislom</a>
-                    {/* <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
-                    {/* <ul id="nav-mobile" className="right hide-on-med-and-down"> */}
-                    <ul id="nav-mobile" className="right">
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/skillset">Skillset</a></li>
-                        <li><a href="/about">About</a></li>
-                    </ul>
-                    <ul class="sidenav right" id="mobile">
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">NChislom</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
                         <li><a href="/portfolio">Portfolio</a></li>
                         <li><a href="/skillset">Skillset</a></li>
                         <li><a href="/about">About</a></li>
@@ -30,8 +31,15 @@ render() {
                 </div>
             </nav>
 
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/skillset">Skillset</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
         </div>
     )};
+
+
 };
 
 export default Nav;
