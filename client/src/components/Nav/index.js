@@ -12,7 +12,7 @@ class Nav extends Component {
     componentDidMount() {
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
+            var instances = M.Sidenav.init(elems, { edge: "right"});
           });
     }
 
@@ -20,8 +20,8 @@ render() {
     return (
         <div>
             <nav>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">NChislom</a>
+                <div class="nav-wrapper cyan">
+                    <a href="#!" class="brand-logo flow-text">Norman Chislom</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/portfolio">Portfolio</a></li>

@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import "./style.css";
 
 class DevIcons extends Component {
+    
     constructor(props) {
         super(props);
         
-        this.state = {}
-
-        const langItems = this.state.langs.map((lang) =>
-            { this.getDevClass[lang] }
-        );
     }
     
     getDevClass(acronym) {
@@ -18,6 +14,8 @@ class DevIcons extends Component {
             boot: "devicon-bootstrap-plain",
             cpp: "devicon-cplusplus-plain",
             css: "devicon-css3-plain",
+            git: "devicon-git-plain",
+            github: "devicon-github-plain",
             ex: "devicon-express-original",
             html: "devicon-html5-plain",
             jq: "devicon-jquery-plain",
@@ -35,7 +33,11 @@ class DevIcons extends Component {
     };
 
     render() {
-        return(<i className={this.landi } /> )    
+        return( 
+            <h2>
+                <i className={ this.getDevClass(this.props.lang) } />
+            </h2>
+        )    
     };
 };
 
